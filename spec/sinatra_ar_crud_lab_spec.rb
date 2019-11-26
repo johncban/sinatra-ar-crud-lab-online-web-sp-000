@@ -128,7 +128,7 @@ describe "Magazine App" do
     end
 
     it "submits the form via a delete request" do
-      visit "/articles/#{@article2.id}"
+      visit "/articles/#{@article1.id}"
       expect(find("[name=_method]", :visible => false).value).to match(/delete/i)
     end
 
