@@ -116,12 +116,12 @@ describe "Magazine App" do
   describe "delete action" do
 
     it 'responds with a 200 status code' do
-      get "/articles/#{@article2.id}"
+      get "/articles/#{@article1.id}"
       expect(last_response.status).to eq(200)
     end
 
     it "deletes an article from the database" do
-      visit "/articles/#{@article2.id}"
+      visit "/articles/#{@article1.id}"
       page.find(:css, "form [type=submit]").click
       expect(Article.all.count).to eq(1)
       expect(Article.last.title).to eq("Hello World")
